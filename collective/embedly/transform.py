@@ -157,7 +157,7 @@ def get_oembed(url, api_key=None, doc=None):
     try:
         result = urllib2.urlopen(fetch_url).read()
         logger.debug("Response: %s" % result)
-    except urllib2.HTTPError, e:
+    except urllib2.HTTPError as e:
         if doc:
             logger.error("Unexpected response from embedly API (%d: %s) while processing %s in %s" % (e.code, e.msg, url, doc))
         else:
